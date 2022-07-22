@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+:root {
+    --light_cyan: hsl(193, 38%, 86%);
+    --neon_green: hsl(150, 100%, 66%);
+    --grayish_blue: hsl(217, 19%, 38%);
+    --dark_grayish_blue: hsl(217, 19%, 24%);
+    --dark_blue: hsl(218, 23%, 16%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark_blue);
+    height: 100vh;
+    max-width: 100vw;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    text-align: center;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: var(--dark_grayish_blue);
+    border-radius: 20px;
+    width: 540px;
+    height: auto;
+    padding: 52px 53px 20px;
+    position: relative;
+}
+.advice_number {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: var(--neon_green);
+    text-transform: uppercase;
+}
+.quote_wrap {
+    margin: 20px 0 35px;
+}
+.advice_quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--light_cyan);
+}
+.desktop_divider {
+    margin: 0 0 40px;
+}
+.mobile_divider {
+    display: none;
+}
+.dice_button button {
+    background-color: var(--neon_green);
+    border: none;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    left: 50%;
+    bottom: -32px;
+    transform: translate(-50%, 0);
+}
+.dice_button button:hover {
+    box-shadow: 0 0 30px var(--neon_green);
+    text-shadow: 0 0 5px var(--neon_green);
+    cursor: pointer;
+}
+.dice_button button:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--neon_green);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media screen and (max-width: 375px) {
+    .container {
+        width: 343px;
+        padding: 40px 28px 20px;
+    }
+    .desktop_divider {
+        display: none;
+    }
+    .mobile_divider {
+        display: block;
+        margin: 0 0 30px;
+    }
+    .advice_quote {
+        font-size: 24px;
+    }
 }
